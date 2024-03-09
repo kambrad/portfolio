@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Kam's Bio</title>
+        <link rel="stylesheet" href="./index.css" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    </head>
+    <body>
+        <section id="main">
+            <header class="flex">
+                <nav class="navbar flex space-between">
+                    <div class="nav-logo ">
+                        <h2>Black American</h2>
+                    </div>
+
+                    <div class="nav-links-wrapper">
+                        <div class="nav-links flex ">
+                            <a href = "https://www.facebook.com/profile.php?id=100092702134349">
+                                <ion-icon name="logo-facebook" class="fb"></ion-icon>
+                            </a>
+                            <a href="https://t.snapchat.com/aJr5UOSQ">
+                                <ion-icon name="logo-snapchat" class="sc"></ion-icon>
+                            </a>
+                            <p>EN</p>
+                            <img src="./img/usa.png"/>
+                        </div>
+                    </div>
+                    <div class="menu open flex">
+                        <ion-icon name="menu-outline" class="flat"></ion-icon>
+                        <ion-icon name="close-outline" class="exit"></ion-icon>
+                        <p>EN</p>
+                        <img src="./img/usa.png"/>
+                    </div>
+                </nav>
+            </header>
+        </section>
+        <section id="hero">
+            <div class="hero container">
+                <div class="hero-top flex">
+                    <h1>Kam</h1>
+                </div>
+                <div class="hero-mid flex">
+                    <div class="outline">
+                        <img src="./img/hero_img.JPG" class="hero-img" />
+                    </div>
+                </div>
+                <div class="hero-bottom flex space-between">
+                    <h1>Brad</h1>
+                </div>
+            </div>
+        </section>
+        <section id="bio">
+            <div class="birth flex" style="justify-content: center; text-transform: uppercase; flex-direction: column;">
+                <h1>January 14, 2000</h1>
+                <hr class="line">
+            </div>
+            <div class="hobby flex space-between">
+                <h2 class="one">Athletic</h2>
+                <h2 class="two">Hardworking</h2>
+                <h2 class="three">Charismatic</h2>
+            </div>
+        </section>
+        <section id="letter" >
+            <div class="letter-wrapper">
+                <div class="letter-container">
+                    My name is Kam'Ron Bradford and I currently reside in the United States. I developed a passion to program since the age of 19, and inspire to become a Web Developer in the near future. 
+                    My strongest asset in programming would be learning HTML, CSS, Javascript, PHP, and C; whilst utilizing functionality within the browser and using lower languages like C for data structures/algorithms.
+                </div>
+            </div>
+
+            <hr class="letter-line"/>
+
+            <div class="language">
+                <div class="language-container flex center">
+                    <h2>Programming Languages Used</h2>
+                </div>
+                <div class="language-img-container flex">
+                    <div class="language-img-wrapper space-between">
+                        <div class="program-img animate-1">
+                            <img src="./img/html5.png" />
+                        </div>
+                        <div class="program-img animate-2">
+                            <img src="./img/css3.png" />
+                        </div>
+                        <div class="program-img animate-3">
+                            <img src="./img/js1.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+    <script type="text/javascript">
+        const { log } = console;
+
+
+
+        const header = document.querySelector("header");
+        var heroTop = document.querySelector(".hero-top"), 
+        heroBottom = document.querySelector(".hero-bottom"), heroImg = document.querySelector(".outline");
+
+        let hobbyOne = document.querySelector(".one");
+        let hobbyTwo = document.querySelector(".two");
+        let hobbyThree = document.querySelector(".three");
+
+        let open = document.querySelector(".flat");
+        let close = document.querySelector(".exit");
+        let navLinks = document.querySelector(".nav-links");
+        let navLinksWrapper = document.querySelector(".nav-links-wrapper");
+
+        var hobby = document.querySelector(".hobby");
+
+        var menu = document.querySelector(".menu");
+
+        let prevScrollTop = window.pageYOffset;
+        let enTag = menu.querySelector("p");
+        let enImg = menu.querySelector("img");
+
+        let letter = document.querySelector(".letter-wrapper");
+        let letterContainer = document.querySelector(".letter-container");
+        let letterLine = document.querySelector(".letter-line");
+        let languageContainer = document.querySelector(".language-container");
+        let languageContainerHeader = document.querySelector(".language-container h2");
+        let line = document.querySelector(".line");
+
+        let birthBanner = document.querySelector(".birth");
+
+        let imgOne = document.querySelector(".animate-1");
+        let imgTwo = document.querySelector(".animate-2");
+        let imgThree = document.querySelector(".animate-3");
+
+
+        window.addEventListener("scroll", (e) => {
+            if (letter.getBoundingClientRect().top <= this.innerHeight) 
+            {
+                letterContainer.style.transform = "translate3d(0,0rem,0)";
+                letterLine.style.width = "30rem";
+            } else 
+            {
+                letterContainer.style.transform = "translate3d(0,100rem,0)";
+                letterLine.style.width = "0";
+            }
+
+
+            if (languageContainer.getBoundingClientRect().top <= this.innerHeight) 
+            {
+                languageContainerHeader.style.transform = "translate3d(0, 0rem, 0)";
+
+                imgOne.style.opacity = 1;
+                imgTwo.style.opacity = 1;
+                imgThree.style.opacity = 1;
+
+                imgOne.style.transition = "opacity 650ms 2s ease";
+                imgTwo.style.transition = "opacity 650ms 2.5s ease";
+                imgThree.style.transition = "opacity 650ms 3s ease";
+
+
+
+            } else 
+            {
+                languageContainerHeader.style.transform = "translate3d(0, 100rem, 0)";
+
+                imgOne.style.opacity = 0;
+                imgTwo.style.opacity = 0;
+                imgThree.style.opacity = 0;
+
+                imgOne.style.transition = "opacity 1ms ease";
+                imgTwo.style.transition = "opacity 1ms ease";
+                imgThree.style.transition = "opacity 1ms ease";
+
+
+            }
+        })
+
+        // window.addEventListener("scroll", (e) => {
+        //     let clientTop = (window.pageYOffset / hobby.clientHeight) - 4 * 0.8;
+        //     let opacity = (hobby.clientHeight / window.pageYOffset) / hobby.clientHeight + 0.8 * 0.5;
+            
+        //     if (hobby.getBoundingClientRect().top <= window.innerHeight) {
+        //         hobbyOne.style.transform = `translate3d(0, -${clientTop}rem, 0)`;
+        //         document.querySelector(".one").style.opacity = opacity;
+        //         hobbyTwo.style.transform = `translate3d(0, -${clientTop}rem, 0)`;
+        //     }
+        // })
+
+        window.addEventListener("scroll", (e) => {
+        // window's bottom reaches elements top
+            if (hobby.getBoundingClientRect().top <= window.innerHeight)
+            {
+                let oneUp = 7.5 - (window.pageYOffset / hobby.clientHeight);
+                let twoUp = 9.5 - (window.pageYOffset / hobby.clientHeight);
+                let threeUp = 10.5 - (window.pageYOffset / hobby.clientHeight);
+
+                hobbyOne.style.transform = `translate3d(0, ${oneUp}rem, 0)`;
+                hobbyTwo.style.transform = `translate3d(0, ${twoUp}rem, 0)`;
+                hobbyThree.style.transform = `translate3d(0, ${threeUp}rem, 0)`;
+            }
+        })
+       
+
+        window.onscroll = (e) => {
+            let currScrollTop = window.pageYOffset;
+            if (currScrollTop > prevScrollTop) 
+            {
+                header.style.top = "-30%";
+            } else 
+            {
+                header.style.top = "0";
+            }        
+            // prevScrollTop = currScrollTop;
+        }
+
+        window.addEventListener("scroll", (e) => {
+            if (typeof e.type === "string" && e.type == "scroll")  {
+                // element bottom reaches target element bottom
+                if (hobby.getBoundingClientRect().bottom <= birthBanner.clientHeight) 
+                {
+                    birthBanner.style.backgroundColor = "rgba(0,0,0,0.925)";
+                    birthBanner.style.color = "white";
+                    line.style.display = "none";
+                    birthBanner.style.transition = "background-color 650ms ease";
+                    hobby.style.opacity = 0;
+                } else 
+                {
+                    birthBanner.style.backgroundColor = "white";
+                    birthBanner.style.color = "black";
+                    line.style.display = "flex";
+                    birthBanner.style.transition = "background-color 650ms ease";
+                    hobby.style.opacity = 1;
+                }
+            }
+        })
+        window.addEventListener("DOMContentLoaded", scrollLoad, false);
+   
+        function setHeroImg (xPos, yPos, element) 
+        {
+            element.style.transform = `scale3d(${xPos}, ${yPos}, 1)`;
+        }
+      
+        function setHeroHeader(xPos, yPos, ele)
+        {
+            ele.style.transform = `translate3d(${xPos}vw, ${yPos}, 0)`;
+        }
+
+        if (window.innerWidth == 500) 
+        {
+            heroImg.style.transform = `translate3d(0.5,0.5,1)`;
+        }
+
+        open.addEventListener("click", (e) => {
+            open.style.display = "none";
+            close.style.display = "block";
+
+            document.body.style.overflow = "hidden";
+
+            enImg && enTag ? (enImg.style.display = "none", enTag.style.display = "none") : "";
+
+            navLinksWrapper.style.display = "flex";
+            navLinks.style.display = "flex";
+        })
+
+        close.addEventListener("click", (e) => {
+            close.style.display = "none";
+            open.style.display = "block";
+
+            document.body.style.overflow = "unset";
+
+            enImg && enTag ? (enImg.style.display = "block", enTag.style.display = "block") : "";
+
+            navLinks.style.display = "none";
+            navLinksWrapper.style.display = "none";
+        })
+
+        function scrollLoad ()
+        {
+            let result = 1 + (window.pageYOffset / heroTop.clientHeight)
+            let scaleXY = 1 + (window.pageYOffset / heroImg.clientHeight) > 1.5 ? 1.5 : 1 + (window.pageYOffset / heroImg.clientHeight);
+
+            setHeroImg(scaleXY, scaleXY, heroImg);
+            setHeroHeader(-result * 5.5, 0, heroTop);
+            setHeroHeader(result * 5.5, 0, heroBottom);
+            // heroImg.style.animation = "image 650ms ease-in forwards";
+
+
+            if (window.innerWidth <= 450)
+            {
+                setHeroHeader(-result * 10, 0, heroTop);
+                setHeroHeader(result * 10, 0, heroBottom);
+                setHeroImg(1 + (window.pageYOffset / heroImg.clientHeight) > 1.4 ? 1.4 : 1 + (window.pageYOffset / heroImg.clientHeight), 1 + (window.pageYOffset / heroImg.clientHeight) > 1.4 ? 1.4 : 1 + (window.pageYOffset / heroImg.clientHeight), heroImg);
+                heroImg.style.animation = "image500 650ms ease-in forwards";
+            } else 
+            {
+                heroImg.style.animation = "image 650ms ease-in forwards";
+
+            }
+
+        
+            requestAnimationFrame(scrollLoad);
+        
+        }
+    </script>
+</html>
