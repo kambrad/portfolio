@@ -66,6 +66,8 @@ function about () {
         setTimeout(() => {
             read.style.opacity = "1";
             read.style.zIndex = "100000";
+            document.querySelector(".read-more-container")
+            .style.zIndex ="150000";
 
             for (let i = 0; i < section.length - 1; ++i){
                 _blur(section[i]).style.filter = "blur(5px)";
